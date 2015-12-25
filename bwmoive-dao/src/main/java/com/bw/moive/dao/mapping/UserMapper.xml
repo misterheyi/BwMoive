@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bw.moive.dao.mapper.UserMapper">
 
-	<resultMap type="com.bw.moive.dao.mapper.UserMapper" id="userResult">
+	<resultMap type="User" id="userResult">
 		<result property="id" column="id"/>
 		<result property="neckName" column="nick_name"/>
 	</resultMap>
@@ -11,4 +11,7 @@
 		select u.id,u.nick_name from user u 
 	</select>
 
+	<select id="count" resultType="int">
+		select count(*) from user
+	</select>
 </mapper>

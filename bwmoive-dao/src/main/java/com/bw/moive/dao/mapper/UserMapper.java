@@ -8,4 +8,6 @@ public interface UserMapper{
 
 	public abstract List<User> queryUser();
 	
+	public abstract Integer count();
+	
 }

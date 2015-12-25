@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bw.moive</groupId>
 	<artifactId>bwmoive</artifactId>
@@ -202,5 +202,8 @@
 		<module>bwmoive-cms</module>
 		<module>bwmoive-service</module>
 		<module>bwmoive-dao</module>
-	</modules>
+    	<module>bwmoive-util</module>
+    	<module>bwmoive-integration</module>
+    	<module>bwmoive-web</module>
+  </modules>
 </project>

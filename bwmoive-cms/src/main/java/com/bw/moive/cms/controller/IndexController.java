@@ -13,6 +13,7 @@ import com.bw.moive.service.IUserService;
 @Controller
 public class IndexController {
 
+	
 	@Autowired
 	public IUserService userService;
 	

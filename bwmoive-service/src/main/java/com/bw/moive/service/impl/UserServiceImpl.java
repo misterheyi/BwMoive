@@ -16,6 +16,7 @@ public class UserServiceImpl implements IUserService{
 	private UserMapper userMapper;
 	
 	public List<User> login(){
+		Integer count = this.userMapper.count();
 		return this.userMapper.queryUser();
 	}
 	
