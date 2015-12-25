@@ -18,7 +18,7 @@ public class IndexController {
 	public IUserService userService;
 	
 	@RequestMapping("/index")
-	public String backIndex(){
+	public String index(){
 		return "index";
 	}
 	

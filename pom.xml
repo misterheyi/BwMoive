@@ -205,5 +205,6 @@
     	<module>bwmoive-util</module>
     	<module>bwmoive-integration</module>
     	<module>bwmoive-web</module>
+    <module>bwmoive-spider</module>
   </modules>
 </project>
