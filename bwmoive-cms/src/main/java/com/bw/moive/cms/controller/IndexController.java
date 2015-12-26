@@ -27,4 +27,6 @@ public class IndexController {
 	public List<User> jsonIndex(){
 		return this.userService.login();
 	}
+	
+	
 }
