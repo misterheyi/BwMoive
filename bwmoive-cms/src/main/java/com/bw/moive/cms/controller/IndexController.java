@@ -1,4 +1,4 @@
-package com.bw.moive.cms.controller;
+ package com.bw.moive.cms.controller;
 
 import java.util.List;
 

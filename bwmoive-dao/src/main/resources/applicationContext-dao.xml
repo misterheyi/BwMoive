@@ -46,14 +46,23 @@
 
 	<!-- Mybatis文件 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="mapperLocations" value="classpath:com/bw/moive/dao/mapping/*.xml"></property>
-		<property name="typeAliasesPackage" value="com.bw.moive.dao.entity" />
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource" />
+        <!-- 数据访问接口对应的 SQL 实现 -->
+        <property name="mapperLocations" value="classpath:mapping/*.xml" />
+        <!-- Mybatis 其他配置 -->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 	</bean>
 
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.bw.moive.dao.mapper" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>
+    <!-- Mybatis 托管给 Spring 的接口与扫描配置 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 
+            * 当前数据源所管理的数据访问接口包
+            * 如果项目中配置了多个数据源时,
+            * 应避免相同数据访问接口包
+        -->
+        <property name="basePackage" value="com.bw.moive.dao.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
 
 </beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+         "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+
+    <!-- 别名 -->
+    <typeAliases>
+        <!-- 
+           * 在ParameterType或ResultType中直接使用类名, 
+           * 首字母大小写均可 
+        -->
+        <package name="com.bw.moive.dao.entity"/>
+        
+    </typeAliases>
+    
+    <!-- 枚举类型处理器 -->
+    <typeHandlers>
+   
+    </typeHandlers> 
+</configuration> 
