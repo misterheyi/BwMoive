@@ -7,17 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bw.moive.service.IUserService;
+import com.bw.moive.service.IAreaService;
 
 @Controller
 public class IndexController {
 
 	@Autowired
-	private IUserService userService;
+	private IAreaService areaService;
 	
 	@RequestMapping("/index")
 	public String index(ModelMap modelMap,HttpServletRequest request){
-		userService.login();
 		return "user";
 	}
 }
