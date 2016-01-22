@@ -9,7 +9,7 @@ public class DataServiceImpl implements IDataService{
 
 	@Override
 	public Map<String, Object> loadData(String url) {
-		Map<String,Object> map = BaiKeSpider.loadBasicInfo(url)
+		Map<String,Object> map = BaiKeSpider.loadBasicInfo(url);
 		return null;
 	}
 
