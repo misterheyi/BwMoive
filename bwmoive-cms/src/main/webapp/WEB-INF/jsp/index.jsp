@@ -1,63 +1,92 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="taglib.jsp"%>
-</script>
+<%@ include file="taglib.jspf"%>
+<script type="text/javascript" charset="utf-8" src="${ctx}js/InitFrame.js"> </script>
+<script type="text/javascript" charset="utf-8" src="${ctx}js/index.js"> </script>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<script type="text/javascript">
-	
-</script>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>数据采集</title>
-<style type="text/css">
-dt, dd {
-	margin: 0;
-	padding: 0;
-}
-</style>
+<title>后台管理系统</title>
 </head>
-<body>
-	
-	视频名称:<input type="text" ></br>
-	视频类型:
-	<input name="vType" type="checkbox" value="checkbox"/>电影
-	<input name="vType" type="checkbox" value="checkbox"/>电视剧
-	<input name="vType" type="checkbox" value="checkbox"/>动漫
-	<input name="vType" type="checkbox" value="checkbox"/>综艺
-	<input name="vType" type="checkbox" value="checkbox"/>其他
-	<br>
-	地区
-	<input name="vType" type="checkbox" value="checkbox"/>大陆
-	<input name="vType" type="checkbox" value="checkbox"/>港台
-	<input name="vType" type="checkbox" value="checkbox"/>欧美
-	<input name="vType" type="checkbox" value="checkbox"/>日剧
-	<input name="vType" type="checkbox" value="checkbox"/>韩剧
-	<input name="vType" type="checkbox" value="checkbox"/>其他
-	<br>
-	影视类型
-	<input name="vType" type="checkbox" value="checkbox"/>喜剧
-	<input name="vType" type="checkbox" value="checkbox"/>冒险
-	<input name="vType" type="checkbox" value="checkbox"/>幻想
-	<input name="vType" type="checkbox" value="checkbox"/>悬念
-	<input name="vType" type="checkbox" value="checkbox"/>惊悚
-	<input name="vType" type="checkbox" value="checkbox"/>战争
-	<input name="vType" type="checkbox" value="checkbox"/>西部
-	<input name="vType" type="checkbox" value="checkbox"/>记录
-	<input name="vType" type="checkbox" value="checkbox"/>记录
-	<input name="vType" type="checkbox" value="checkbox"/>记录
-	<input name="vType" type="checkbox" value="checkbox"/>记录
-	<input name="vType" type="checkbox" value="checkbox"/>记录
-	<br>
-	<script type="text/plain" id="desc">
-      	详细剧情
-    </script>
-	<script type="text/javascript">
-		var moiveDrama = UE.getEditor('desc', {
-			autoClearinitialContent : true, //focus时自动清空初始化时的内容
-			wordCount : false, //关闭字数统计
-			elementPathEnabled : false,//关闭elementPath
-			initialFrameHeight : 310
-		});
-	</script>
+<body class="easyui-layout" style="overflow-y: hidden" scroll="no">
+	<noscript>
+		<div
+			style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
+			<img src="${ctx}images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+		</div>
+	</noscript>
+	<div region="north" split="true" border="false"
+		style="overflow: hidden; height: 30px;
+        background: url(${ctx}images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
+        line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
+		<span style="float:right; padding-right:20px;" class="head">欢迎
+			五福 <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a>
+		</span> <span style="padding-left:10px; font-size: 16px; "><img
+			src="images/blocks.gif" width="20" height="20" align="absmiddle" />
+			管理系统</span>
+	</div>
+	<div region="south" split="true"
+		style="height: 30px; background: #D2E0F2; ">
+		<div class="footer">底部</div>
+	</div>
+	<div region="west" hide="true" split="true" title="导航菜单"
+		style="width:180px;" id="west">
+		<div id="nav" class="easyui-accordion" fit="true" border="false">
+			<!--  导航内容 -->
+
+		</div>
+
+	</div>
+	<div id="mainPanle" region="center"
+		style="background: #eee; overflow-y:hidden">
+		<div id="tabs" class="easyui-tabs" fit="true" border="false">
+		</div>
+	</div>
+
+
+	<!--修改密码窗口-->
+	<div id="w" class="easyui-window" title="修改密码" collapsible="false"
+		minimizable="false" maximizable="false" icon="icon-save"
+		style="width: 300px; height: 150px; padding: 5px;
+        background: #fafafa;">
+		<div class="easyui-layout" fit="true">
+			<div region="center" border="false"
+				style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+				<table cellpadding=3>
+					<tr>
+						<td>新密码：</td>
+						<td><input id="txtNewPass" type="Password" class="txt01" />
+						</td>
+					</tr>
+					<tr>
+						<td>确认密码：</td>
+						<td><input id="txtRePass" type="Password" class="txt01" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div region="south" border="false"
+				style="text-align: right; height: 30px; line-height: 30px;">
+				<a id="btnEp" class="easyui-linkbutton" icon="icon-ok"
+					href="javascript:void(0)"> 确定</a> <a id="btnCancel"
+					class="easyui-linkbutton" icon="icon-cancel"
+					href="javascript:void(0)">取消</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="mm" class="easyui-menu" style="width:150px;">
+		<div id="mm-tabupdate">刷新</div>
+		<div class="menu-sep"></div>
+		<div id="mm-tabclose">关闭</div>
+		<div id="mm-tabcloseall">全部关闭</div>
+		<div id="mm-tabcloseother">除此之外全部关闭</div>
+		<div class="menu-sep"></div>
+		<div id="mm-tabcloseright">当前页右侧全部关闭</div>
+		<div id="mm-tabcloseleft">当前页左侧全部关闭</div>
+		<div class="menu-sep"></div>
+		<div id="mm-exit">退出</div>
+	</div>
+
 </body>
 </html>

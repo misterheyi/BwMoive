@@ -71,6 +71,11 @@
 				<artifactId>bwmoive-util</artifactId>
 				<version>1.0</version>
 			</dependency>
+			<dependency>
+				<groupId>com.bw.moive</groupId>
+				<artifactId>bwmoive-spider</artifactId>
+				<version>1.0</version>
+			</dependency>
 			<!-- spring包 -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -174,6 +179,11 @@
 				<groupId>com.belerweb</groupId>
 				<artifactId>pinyin4j</artifactId>
 				<version>2.5.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>19.0</version>
 			</dependency>
 			<!-- javax -->
 			<dependency>

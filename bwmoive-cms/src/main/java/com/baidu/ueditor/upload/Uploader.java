@@ -1,8 +1,10 @@
 package com.baidu.ueditor.upload;
 
 import com.baidu.ueditor.define.State;
+import com.bw.moive.util.ResourceLoader;
 
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class Uploader {
@@ -12,6 +14,7 @@ public class Uploader {
 	public Uploader(HttpServletRequest request, Map<String, Object> conf) {
 		this.request = request;
 		this.conf = conf;
+		this.conf.put("rootPath", ResourceLoader.loadResource("file.path"));
 	}
 
 	public final State doExec() {

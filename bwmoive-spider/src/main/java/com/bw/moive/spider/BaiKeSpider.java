@@ -17,7 +17,7 @@ public class BaiKeSpider {
 		BaiKeSpider.loadBasicInfo("http://baike.baidu.com/item/%E6%B8%AF%E5%9B%A7/9722595");
 	}
 	
-	public static void loadBasicInfo(String url){
+	public static Map<String,Object> loadBasicInfo(String url){
 		Map<String,Object> map = new HashMap<String,Object>();
 		// 从 URL 直接加载 HTML 文档
 		Document doc;
@@ -82,10 +82,10 @@ public class BaiKeSpider {
 				list.add(role);
 			}
 			map.put("roles", list);
-			System.out.println(values.size());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
+		return map;
 	} 
 	
 }
