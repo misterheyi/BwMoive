@@ -7,13 +7,13 @@ var _menus = {
 			"menuid" : "12",
 			"menuname" : "数据采集",
 			"icon" : "icon-add",
-			"url" : basePath + "data/toDataCollectionUI"
+			"url" : basePath + "/data/toDataUI"
 		}, {
 			"menuid" : "13",
 			"menuname" : "数据管理",
 			"icon" : "icon-users",
 			"url" : basePath + "riddle/toListRiddle"
-		}]
+		}, ]
 	} ]
 };
 // 设置登录窗口

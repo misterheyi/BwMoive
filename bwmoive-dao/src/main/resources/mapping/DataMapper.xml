@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bw.moive.dao.mapper.DataMapper">
+
+	<resultMap type="Data" id="dataResult">
+		<id property="tid" column="tid"/>
+		<result property="aId" column="aid"/>
+		<result property="vYear" column="v_year"/>
+		<result property="vPic" column="v_pic"/>
+		<result property="vName" column="v_name"/>
+		<result property="vSpell" column="v_spell"/>
+		<result property="vSpell" column="v_letter"/>
+		<result property="vNickName" column="v_nickname"/>
+		<result property="vPublishYear" column="v_publishyear"/>
+		<result property="vPublishCompany" column="v_publishcompany"/>
+		<result property="vShowBox" column="v_showbox"/>
+		<result property="vPublishArea" column="v_publisharea"/>
+		<result property="vVideoArea" column="v_videoarea"/>
+		<result property="vVideoTime" column="v_videotime"/>
+		<result property="vOnTime" column="v_ontime"/>
+		<result property="vOffTime" column="v_offtime"/>
+		<result property="vDirector" column="v_director"/>
+		<result property="vWriter" column="v_writer"/>
+		<result property="vProducer" column="v_producer"/>
+		<result property="vType" column="v_type"/>
+		<result property="vActor" column="v_actor"/>
+		<result property="vTotal" column="v_total"/>
+		<result property="vLength" column="v_length"/>
+		<result property="vBoxOffice" column="v_boxoffice"/>
+		<result property="vLanguage" column="v_language"/>
+		<result property="vColor" column="v_color"/>
+		<result property="vImdb" column="v_imdb"/>
+		<result property="vPerLength" column="v_perlength"/>
+		<result property="vPresenter" column="v_presenter"/>
+		<result property="vOnlineShow" column="v_onlineshow"/>
+		<result property="vTvShow" column="v_tvshow"/>
+		<result property="vDrama" column="v_drama"/>
+		<result property="vDescription" column="v_description"/>
+		<result property="vState" column="v_state"/>
+		<result property="vScore" column="v_score"/>
+		<result property="vScoreNum" column="v_scorenum"/>
+		<result property="vDoubanScore" column="v_doubanscore"/>
+		<result property="vmTimeScore" column="v_mtimescore"/>
+		<result property="vImdbScore" column="v_imdbscore"/>
+		<result property="vMeituanScore" column="v_meituanscore"/>
+		<result property="vNote" column="v_note"/>
+		<result property="vTags" column="v_tags"/>
+		<result property="vIsUnion" column="v_isunion"/>
+		<result property="vCycle" column="v_cycle"/>
+		<result property="vVer" column="v_ver"/>
+		<result property="vRemark" column="v_remark"/>
+		<result property="vDigg" column="v_digg"/>
+		<result property="vRank" column="v_rank"/>
+		<result property="vHit" column="v_hit"/>
+		<result property="vDayHit" column="v_dayhit"/>
+		<result property="vWeekHit" column="v_weekhit"/>
+		<result property="vMonthHit" column="v_monthhit"/>
+		<result property="vHitTime" column="v_hittime"/>
+		<result property="vDayTime" column="v_daytime"/>
+		<result property="vWeekTime" column="v_weektime"/>
+		<result property="vMonthTime" column="v_monthtime"/>
+		<result property="vCreateTime" column="v_createtime"/>
+		<result property="vUpdateTime" column="v_updatetime"/>
+		<result property="vSource" column="v_source"/>
+	</resultMap>
+
+	<insert id="insertData">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="data.vId">  
+          SELECT LAST_INSERT_ID() AS ID    
+  	    </selectKey>  
+		INSERT INTO `bw_data` (
+			`tid`, `aid` , `v_year`, `v_pic`, `v_name`, `v_spell`, `v_letter`, `v_nickname`, `v_enname`, 
+			`v_publishyear`, `v_publishcompany`, 
+			`v_showbox`, `v_publisharea`, `v_videoarea`, `v_videotime`, `v_ontime`, `v_offtime`, 
+			`v_director`, `v_writer`, `v_producer`, 
+			`v_type`, `v_actor`, `v_total`, `v_length`, `v_boxoffice`, `v_language`, `v_color`, 
+			`v_imdb`, `v_perlength`, `v_presenter`, 
+			`v_onlineshow`, `v_tvshow`, `v_drama`, `v_description`, `v_state`, `v_score`, `v_scorenum`, 
+			`v_doubanscore`, `v_mtimescore`, 
+			`v_imdbscore`, `v_meituanscore`, `v_note`, `v_tags`, `v_isunion`,`v_cycle`, `v_ver`, `v_remark`, 
+			`v_digg`, `v_rank`, `v_hit`, `v_dayhit`, 
+			`v_weekhit`, `v_monthhit`, `v_hittime`, `v_daytime`, `v_weektime`, `v_monthtime`, 
+			`v_createtime`, `v_updatetime`, `v_source`) 
+		VALUES (
+			#{data.tId}, #{data.aId}, #{data.vYear}, #{data.vPic}, #{data.vName}, #{data.vSpell}, #{data.vLetter}, #{data.vNickName}, #{data.vEnName}, 
+			#{data.vPublishYear}, #{data.vPublishCompany}, #{data.vShowBox}, #{data.vPublishArea}, #{data.vVideoArea}, 
+			#{data.vVideoTime}, #{data.vOnTime}, #{data.vOffTime}, #{data.vDirector}, #{data.vWriter}, #{data.vProducer}, #{data.vType},
+			#{data.vActor}, #{data.vTotal}, #{data.vLength}, #{data.vBoxOffice}, 
+			#{data.vLanguage}, #{data.vColor}, #{data.vImdb}, #{data.vPerLength}, #{data.vPresenter}, 
+			#{data.vOnlineShow}, #{data.vTvShow}, #{data.vDrama}, #{data.vDescription}, #{data.vState}, #{data.vScore}, #{data.vScoreNum},
+			#{data.vDoubanScore}, #{data.vmTimeScore}, #{data.vImdbScore}, #{data.vMeituanScore}, #{data.vNote}, 
+			#{data.vTags}, #{data.vIsUnion},#{data.vCycle}, #{data.vVer}, #{data.vRemark}, #{data.vDigg}, #{data.vRank}, #{data.vHit}, 
+			#{data.vDayHit}, #{data.vWeekHit}, #{data.vMonthHit}, #{data.vHitTime}, #{data.vDayTime}, 
+			#{data.vWeekTime}, #{data.vMonthTime}, #{data.vCreateTime}, #{data.vUpdateTime}, #{data.vSource});
+	</insert>
+
+</mapper>

@@ -1,23 +1,23 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="taglib.jspf"%>
-<script type="text/javascript" charset="utf-8" src="${ctx}js/InitFrame.js"> </script>
-<script type="text/javascript" charset="utf-8" src="${ctx}js/index.js"> </script>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>后台管理系统</title>
+<%@ include file="taglib.jsp"%>
+<script type="text/javascript" charset="utf-8" src="${ctx}/js/index.js"> </script>
+<script type="text/javascript" charset="utf-8" src="${ctx}/js/InitFrame.js"> </script>
 </head>
 <body class="easyui-layout" style="overflow-y: hidden" scroll="no">
 	<noscript>
 		<div
 			style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
-			<img src="${ctx}images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+			<img src="${ctx}/images/noscript.gif" alt='抱歉，请开启脚本支持！' />
 		</div>
 	</noscript>
 	<div region="north" split="true" border="false"
 		style="overflow: hidden; height: 30px;
-        background: url(${ctx}images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
+        background: url(${ctx}/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
 		<span style="float:right; padding-right:20px;" class="head">欢迎
 			五福 <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a>

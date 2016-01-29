@@ -2,24 +2,44 @@ package com.bw.moive.dao.entity;
 
 public class Area {
 
-	private Integer id;
-	
-	private String name;
+	private Integer aId;
 
-	public Integer getId() {
-		return id;
+	private String aName;
+
+	private String aEnName;
+
+	private String aOrder;
+
+	public Integer getaId() {
+		return aId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setaId(Integer aId) {
+		this.aId = aId;
 	}
 
-	public String getName() {
-		return name;
+	public String getaName() {
+		return aName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setaName(String aName) {
+		this.aName = aName;
 	}
-	
+
+	public String getaEnName() {
+		return aEnName;
+	}
+
+	public void setaEnName(String aEnName) {
+		this.aEnName = aEnName;
+	}
+
+	public String getaOrder() {
+		return aOrder;
+	}
+
+	public void setaOrder(String aOrder) {
+		this.aOrder = aOrder;
+	}
+
 }

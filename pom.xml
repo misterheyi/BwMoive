@@ -71,11 +71,6 @@
 				<artifactId>bwmoive-util</artifactId>
 				<version>1.0</version>
 			</dependency>
-			<dependency>
-				<groupId>com.bw.moive</groupId>
-				<artifactId>bwmoive-spider</artifactId>
-				<version>1.0</version>
-			</dependency>
 			<!-- spring包 -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -256,6 +251,5 @@
 		<module>bwmoive-dao</module>
 		<module>bwmoive-util</module>
 		<module>bwmoive-web</module>
-		<module>bwmoive-spider</module>
 	</modules>
 </project>

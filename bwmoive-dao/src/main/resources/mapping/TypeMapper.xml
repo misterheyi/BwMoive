@@ -3,12 +3,31 @@
 <mapper namespace="com.bw.moive.dao.mapper.TypeMapper">
 
 	<resultMap type="type" id="typeResult">
-		<result property="id" column="id"/>
-		<result property="name" column="name"/>
+		<id property="tId" column="t_id"/>
+		<result property="upId" column="upid"/>
+		<result property="tName" column="t_name"/>
+		<result property="tEnName" column="t_enname"/>
+		<result property="tOrder" column="t_order"/>
+	</resultMap>
+	
+	<resultMap type="TypeTreeDTO" id="typeTreeResult">
+		<id property="tId" column="t_id"/>
+		<result property="upId" column="upid"/>
+		<result property="tName" column="t_name"/>
+		<result property="tEnName" column="t_enname"/>
+		<result property="tOrder" column="t_order"/>
+		<collection property="subType" column="t_id" ofType="type" javaType="java.util.ArrayList" select="selectTypeByUpId" />
 	</resultMap>
 
 	<select id="selectAllType" resultMap="typeResult">
-		select t.id,t.name from type t;
+		select t.* from bw_type t;
 	</select>
 
+	<select id="selectTypeByUpId" resultMap="typeResult">
+		select t.* from bw_type t where t.upid=#{upId};
+	</select>
+
+	<select id="selectTypeTree" resultMap="typeTreeResult">
+		select t.* from bw_type t where t.upid=0;
+	</select>
 </mapper>

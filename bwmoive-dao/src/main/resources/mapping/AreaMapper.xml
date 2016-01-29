@@ -3,12 +3,14 @@
 <mapper namespace="com.bw.moive.dao.mapper.AreaMapper">
 
 	<resultMap type="Area" id="areaResult">
-		<result property="id" column="id"/>
-		<result property="name" column="name"/>
+		<id property="aId" column="a_id"/>
+		<result property="aName" column="a_name"/>
+		<result property="aEnName" column="a_enname"/>
+		<result property="aOrder" column="a_order"/>
 	</resultMap>
 
-	<select id="selectAllArea" resultMap="userResult">
-		select a.id,a.name from area a; 
+	<select id="selectAllArea" resultMap="areaResult">
+		select a.* from bw_area a order by a.a_order desc; 
 	</select>
 
 </mapper>

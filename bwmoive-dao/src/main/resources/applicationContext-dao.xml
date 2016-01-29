@@ -51,6 +51,8 @@
         <!-- 数据访问接口对应的 SQL 实现 -->
         <property name="mapperLocations" value="classpath:mapping/*.xml" />
         <!-- Mybatis 其他配置 -->
+        <property name="typeAliasesPackage" value="com.bw.moive.dao.entity,com.bw.moive.dao.dto">
+        </property>
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 	</bean>
 

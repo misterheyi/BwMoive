@@ -7,9 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bw.moive.dao.entity.Area;
 import com.bw.moive.dao.entity.Type;
-import com.bw.moive.dao.mapper.AreaMapper;
 import com.bw.moive.dao.mapper.TypeMapper;
 import com.bw.moive.service.ITypeService;
 

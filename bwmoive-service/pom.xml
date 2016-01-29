@@ -17,10 +17,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.bw.moive</groupId>
-			<artifactId>bwmoive-spider</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.bw.moive</groupId>
 			<artifactId>bwmoive-dao</artifactId>
 		</dependency>
 		<dependency>
