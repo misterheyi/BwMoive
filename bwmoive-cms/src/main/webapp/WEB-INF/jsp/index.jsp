@@ -20,7 +20,7 @@
         background: url(${ctx}/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
 		<span style="float:right; padding-right:20px;" class="head">欢迎
-			五福 <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a>
+			五福 <a href="javascript:void(0);" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a>
 		</span> <span style="padding-left:10px; font-size: 16px; "><img
 			src="images/blocks.gif" width="20" height="20" align="absmiddle" />
 			管理系统</span>
@@ -29,8 +29,7 @@
 		style="height: 30px; background: #D2E0F2; ">
 		<div class="footer">底部</div>
 	</div>
-	<div region="west" hide="true" split="true" title="导航菜单"
-		style="width:180px;" id="west">
+	<div region="west" hide="true" split="true" title="导航菜单" style="width:130px;" id="west">
 		<div id="nav" class="easyui-accordion" fit="true" border="false">
 			<!--  导航内容 -->
 

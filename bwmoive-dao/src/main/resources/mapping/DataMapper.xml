@@ -3,14 +3,17 @@
 <mapper namespace="com.bw.moive.dao.mapper.DataMapper">
 
 	<resultMap type="Data" id="dataResult">
-		<id property="tid" column="tid"/>
+		<id property="vId" column="v_id"/>
+		<result property="cId" column="cid"/>
+		<result property="tId" column="tid"/>
 		<result property="aId" column="aid"/>
 		<result property="vYear" column="v_year"/>
 		<result property="vPic" column="v_pic"/>
 		<result property="vName" column="v_name"/>
 		<result property="vSpell" column="v_spell"/>
-		<result property="vSpell" column="v_letter"/>
+		<result property="vLetter" column="v_letter"/>
 		<result property="vNickName" column="v_nickname"/>
+		<result property="vEnName" column="v_enname"/>
 		<result property="vPublishYear" column="v_publishyear"/>
 		<result property="vPublishCompany" column="v_publishcompany"/>
 		<result property="vShowBox" column="v_showbox"/>
@@ -63,13 +66,23 @@
 		<result property="vUpdateTime" column="v_updatetime"/>
 		<result property="vSource" column="v_source"/>
 	</resultMap>
+	
+	<select id="selectData" resultMap="dataResult">
+		SELECT d.* FROM bw_data d
+		<where>
+			<if test="param.vName != null and param.vName != ''">
+				d.v_name LIKE "%"#{param.vName}"%"
+			</if>
+		</where>
+		ORDER BY d.v_updatetime DESC
+	</select>
 
 	<insert id="insertData">
 		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="data.vId">  
           SELECT LAST_INSERT_ID() AS ID    
   	    </selectKey>  
 		INSERT INTO `bw_data` (
-			`tid`, `aid` , `v_year`, `v_pic`, `v_name`, `v_spell`, `v_letter`, `v_nickname`, `v_enname`, 
+			`cid`,`tid`, `aid` , `v_year`, `v_pic`, `v_name`, `v_spell`, `v_letter`, `v_nickname`, `v_enname`, 
 			`v_publishyear`, `v_publishcompany`, 
 			`v_showbox`, `v_publisharea`, `v_videoarea`, `v_videotime`, `v_ontime`, `v_offtime`, 
 			`v_director`, `v_writer`, `v_producer`, 
@@ -82,7 +95,7 @@
 			`v_weekhit`, `v_monthhit`, `v_hittime`, `v_daytime`, `v_weektime`, `v_monthtime`, 
 			`v_createtime`, `v_updatetime`, `v_source`) 
 		VALUES (
-			#{data.tId}, #{data.aId}, #{data.vYear}, #{data.vPic}, #{data.vName}, #{data.vSpell}, #{data.vLetter}, #{data.vNickName}, #{data.vEnName}, 
+			#{data.cId}, #{data.tId}, #{data.aId}, #{data.vYear}, #{data.vPic}, #{data.vName}, #{data.vSpell}, #{data.vLetter}, #{data.vNickName}, #{data.vEnName}, 
 			#{data.vPublishYear}, #{data.vPublishCompany}, #{data.vShowBox}, #{data.vPublishArea}, #{data.vVideoArea}, 
 			#{data.vVideoTime}, #{data.vOnTime}, #{data.vOffTime}, #{data.vDirector}, #{data.vWriter}, #{data.vProducer}, #{data.vType},
 			#{data.vActor}, #{data.vTotal}, #{data.vLength}, #{data.vBoxOffice}, 
@@ -91,7 +104,7 @@
 			#{data.vDoubanScore}, #{data.vmTimeScore}, #{data.vImdbScore}, #{data.vMeituanScore}, #{data.vNote}, 
 			#{data.vTags}, #{data.vIsUnion},#{data.vCycle}, #{data.vVer}, #{data.vRemark}, #{data.vDigg}, #{data.vRank}, #{data.vHit}, 
 			#{data.vDayHit}, #{data.vWeekHit}, #{data.vMonthHit}, #{data.vHitTime}, #{data.vDayTime}, 
-			#{data.vWeekTime}, #{data.vMonthTime}, #{data.vCreateTime}, #{data.vUpdateTime}, #{data.vSource});
+			#{data.vWeekTime}, #{data.vMonthTime}, #{data.vCreateTime}, #{data.vUpdateTime}, #{data.vSource})
 	</insert>
 
 </mapper>

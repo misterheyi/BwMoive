@@ -241,7 +241,11 @@
 				<version>1.7.6</version>
 			</dependency>
 			<!-- /Log 日志 -->
-
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>4.0.1</version>
+		</dependency>
 		</dependencies>
 
 	</dependencyManagement>

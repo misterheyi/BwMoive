@@ -5,9 +5,10 @@ import java.util.Date;
 
 public class Data {
 	private Integer vId;// 主键
+	private Integer cId;//频道ID
 	private Integer tId;// 类型ID
 	private Integer aId;// 所属地区
-	private Integer vYear;
+	private Integer vYear;//年份
 	private String vPic;// 海报路径
 	private String vName;// 名称
 	private String vSpell;// 中文拼音
@@ -49,7 +50,7 @@ public class Data {
 	private String vNote;// 备注
 	private String vTags;// 标签
 	private Integer vIsUnion;// 是否连载
-	private String vCycle;
+	private String vCycle;//更新周期
 	private String vVer;// 版本
 	private String vRemark;// 备用说明
 	private Integer vDigg;// 用户推荐
@@ -57,7 +58,7 @@ public class Data {
 	private Integer vHit;// 总点击
 	private Integer vDayHit;// 日点击
 	private Integer vWeekHit;;// 周点击
-	private Integer vMonthHit;// 月点击
+	private Integer vMonthHit;// 月点	击
 	private Date vHitTime;// 总点击统计时间
 	private Date vDayTime;// 天点击统计时间
 	private Date vWeekTime;// 周点击统计时间
@@ -72,6 +73,14 @@ public class Data {
 
 	public void setvId(Integer vId) {
 		this.vId = vId;
+	}
+
+	public Integer getcId() {
+		return cId;
+	}
+
+	public void setcId(Integer cId) {
+		this.cId = cId;
 	}
 
 	public Integer gettId() {

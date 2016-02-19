@@ -3,38 +3,25 @@
 <mapper namespace="com.bw.moive.dao.mapper.LinkMapper">
 
 	<resultMap type="Link" id="linkResult">
-		<result property="id" column="id"/>
-		<result property="mid" column="mid"/>
-		<result property="name" column="name"/>
-		<result property="link" column="link"/>
-		<result property="type" column="type"/>
-		<result property="status" column="status"/>
-		<result property="creator" column="creator"/>
-		<result property="createtime" column="createtime"/>
-		<result property="source" column="source"/>
+		<result property="lId" column="l_id"/>
+		<result property="vId" column="vid"/>
+		<result property="lName" column="l_name"/>
+		<result property="lLink" column="l_link"/>
+		<result property="lType" column="l_type"/>
+		<result property="lStatus" column="l_status"/>
+		<result property="lCreateTime" column="l_createtime"/>
+		<result property="lUpdateTime" column="l_updatetime"/>
 	</resultMap>
 
 	<insert id="insertLink">
-		INSERT 
-			INTO 
-		`link` 
-			(`mid`, `name`, `link`, `type`, `status`, `creator`, `createtime`, `source`) 
-		VALUES 
-			(#mId#, #name#, #link#, #type#, #status#, #creator#, #createtime#, #source#)
+		insert into `bw_link` 
+		( `l_name`, `l_link`, `l_type`, `l_status`, `vid`, `l_createtime`, `l_updatetime`) 
+		values 
+		(#{link.lName}, #{link.lLink}, #{link.lType}, #{link.lStatus}, #{link.vId},#{link.lCreateTime}, #{link.lUpdateTime})
 	</insert>
 	
-	<select id="selectLinkById" resultMap="linkResult">
-		SELECT * FROM `link` WHERE `id` = #id#
+	<select id="selectLinkByVId" resultMap="linkResult">
+		SELECT * FROM `bw_link` WHERE `vid` =#{vId}
 	</select>
 
-	<select id="selectLinkByMidAndStatus" resultMap="linkResult">
-		SELECT * FROM `link` WHERE `mid` = #mId#
-		<if test="${status != null}">
-			AND `status` = #status#
-		</if>
-	</select>
-	
-	<delete id="deleteLinkById">
-		DELETE FROM `link` WHERE (`id`=#id#)
-	</delete>
 </mapper>

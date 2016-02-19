@@ -8,4 +8,6 @@ public interface ITypeService {
 
 	public abstract List<Type> selectAllType();
 	
+	
+	public abstract List<Type> selectTypeByChannelId(Integer cId);
 }

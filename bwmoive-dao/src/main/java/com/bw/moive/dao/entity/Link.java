@@ -15,101 +15,92 @@ public class Link implements Serializable{
 	private static final long serialVersionUID = -6599445124396048994L;
 
 	//ID
-	private Integer id;
+	private Integer lId;
 	
 	//电影ID
-	private Integer mId;
+	private Integer vId;
 	
 	//名称
-	private String name;
+	private String lName;
 	
 	//链接地址(原始地址)
-	private String link;
+	private String lLink;
 	
 	//链接地址类型
-	private Integer type;
+	private Integer lType;
 	
 	//状态（0:正常）
-	private Integer status;
-	
-	//创建者
-	private Integer creator;
+	private Integer lStatus;
 	
 	//创建时间
-	private Date createTime;
+	private Date lCreateTime;
 
-	//来源
-	private String source;
+	//更新时间
+	private Date lUpdateTime;
+
+	public Integer getlId() {
+		return lId;
+	}
+
+	public void setlId(Integer lId) {
+		this.lId = lId;
+	}
+
+	public Integer getvId() {
+		return vId;
+	}
+
+	public void setvId(Integer vId) {
+		this.vId = vId;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public String getlLink() {
+		return lLink;
+	}
+
+	public void setlLink(String lLink) {
+		this.lLink = lLink;
+	}
+
+	public Integer getlType() {
+		return lType;
+	}
+
+	public void setlType(Integer lType) {
+		this.lType = lType;
+	}
+
+	public Integer getlStatus() {
+		return lStatus;
+	}
+
+	public void setlStatus(Integer lStatus) {
+		this.lStatus = lStatus;
+	}
+
+	public Date getlCreateTime() {
+		return lCreateTime;
+	}
+
+	public void setlCreateTime(Date lCreateTime) {
+		this.lCreateTime = lCreateTime;
+	}
+
+	public Date getlUpdateTime() {
+		return lUpdateTime;
+	}
+
+	public void setlUpdateTime(Date lUpdateTime) {
+		this.lUpdateTime = lUpdateTime;
+	}
 	
-	public Integer getId() {
-		return id;
-	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getmId() {
-		return mId;
-	}
-
-	public void setmId(Integer mId) {
-		this.mId = mId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
-	}
-
-	public Integer getType() {
-		return type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Integer getCreator() {
-		return creator;
-	}
-
-	public void setCreator(Integer creator) {
-		this.creator = creator;
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getSource() {
-		return source;
-	}
-
-	public void setSource(String source) {
-		this.source = source;
-	}
 }

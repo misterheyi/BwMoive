@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+body {color: #333;font: 14px/1.5 "微软雅黑",YaHei,tahoma,arial,"Hiragino Sans GB",宋体;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, img { margin: 0;padding: 0;}
+address, caption, cite, code, dfn, em, th, var, i {font-style: normal;font-weight: normal;}
+ul, ol, li {list-style: outside none none;}
+img {border: medium none;vertical-align: middle;}
+a {color: #555;outline: medium none;text-decoration: none;}
+a:hover {color: #d03b21;text-decoration: none;}
+.fleft {float: left;}
+.fright {float: right;}
+.clearfix::after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
+
+.ui_header{width: 960px;height:130px; margin: 0 auto;background-color: red;}

@@ -8,4 +8,6 @@ public interface IAreaService {
 
 	public abstract List<Area> selectAllArea();
 	
+	public abstract List<Area> selectAreaByChannelId(Integer cId);
+	
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bw.moive.dao.mapper.ChannelMapper">
+
+	<resultMap type="channel" id="channelResult">
+		<id property="cId" column="c_id"/>
+		<result property="cName" column="c_name"/>
+		<result property="cEnName" column="c_enname"/>
+		<result property="cOrder" column="c_order"/>
+	</resultMap>
+	
+
+	<select id="selectAllChannel" resultMap="channelResult">
+		select c.* from bw_channel c;
+	</select>
+
+</mapper>

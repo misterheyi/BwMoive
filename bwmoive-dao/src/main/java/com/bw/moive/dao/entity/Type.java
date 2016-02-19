@@ -12,7 +12,7 @@ public class Type implements Serializable {
 
 	private Integer tId;
 
-	private Integer upId;
+	private Integer cId;
 
 	private String tName;
 
@@ -29,12 +29,13 @@ public class Type implements Serializable {
 		this.tId = tId;
 	}
 
-	public Integer getUpId() {
-		return upId;
+
+	public Integer getcId() {
+		return cId;
 	}
 
-	public void setUpId(Integer upId) {
-		this.upId = upId;
+	public void setcId(Integer cId) {
+		this.cId = cId;
 	}
 
 	public String gettName() {

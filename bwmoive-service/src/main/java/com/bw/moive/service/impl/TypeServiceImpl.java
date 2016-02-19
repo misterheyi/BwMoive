@@ -26,6 +26,15 @@ public class TypeServiceImpl implements ITypeService{
 		}
 		return new ArrayList<Type>(); 
 	}
-	
+
+	@Override
+	public List<Type> selectTypeByChannelId(Integer cId) {
+		try {
+			return this.typeMapper.selectTypeByChannelId(cId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 }

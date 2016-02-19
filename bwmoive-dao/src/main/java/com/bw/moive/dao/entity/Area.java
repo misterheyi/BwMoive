@@ -4,6 +4,8 @@ public class Area {
 
 	private Integer aId;
 
+	private Integer cId;
+
 	private String aName;
 
 	private String aEnName;
@@ -40,6 +42,14 @@ public class Area {
 
 	public void setaOrder(String aOrder) {
 		this.aOrder = aOrder;
+	}
+
+	public Integer getcId() {
+		return cId;
+	}
+
+	public void setcId(Integer cId) {
+		this.cId = cId;
 	}
 
 }

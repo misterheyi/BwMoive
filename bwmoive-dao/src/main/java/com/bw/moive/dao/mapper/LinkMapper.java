@@ -13,10 +13,6 @@ public interface LinkMapper {
 
 	public abstract Integer insertLink(@Param("link") Link link) throws SQLException;
 	
-	public abstract Link selectLinkById(@Param("id") Integer id) throws SQLException;
-	
-	public abstract List<Link> selectLinkByMidAndStatus(@Param("mId") Integer mId , @Param("status") Integer status) throws SQLException;
-	
-	public abstract Integer deleteLinkById(@Param("id") Integer id) throws SQLException;
-	
+	public abstract List<Link> selectLinkByVId(@Param("vId") Integer vId) throws SQLException;
+		
 }

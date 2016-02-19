@@ -27,11 +27,18 @@ public class BaiKeSpider {
 			Elements eBaseInfo = doc.select("div.basic-info");
 			Elements names = eBaseInfo.select("dt.basicInfo-item");
 			Elements values = eBaseInfo.select("dd.basicInfo-item");
+			for(int j = 0 ; j<eBaseInfo.size(); j++){
+				
+			}
 			Map<String,String> basicInfos = new HashMap<String,String>();
-			for(int i=0 ; i<names.size() ; i++){
-				String name = names.get(i).text().replace("\u00A0", "");
-				String value = values.get(i).text().replace("\u3001", ",").replace("/", ",").replace("，", ",");
-				basicInfos.put(BasicInfos.getValue(name),value);
+			if(names.size() == values.size()){
+				for(int i=0 ; i<names.size() ; i++){
+					String name = names.get(i).text().trim().replace("\u00A0", "");
+					String value = values.get(i).text().replace("\u3001", ",").replace("/", ",").replace("，", ",");
+					if(BasicInfos.getValue(name) != null){
+						basicInfos.put(BasicInfos.getValue(name),value);
+					}
+				}
 			}
 			//中文拼音
 			String vName = basicInfos.get("vName");

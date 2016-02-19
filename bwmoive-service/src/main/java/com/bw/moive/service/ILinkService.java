@@ -8,6 +8,6 @@ public interface ILinkService {
 
 	public abstract Map<String,Object> insertLink(Link link);
 	
-	public abstract Map<String,Object> selectLinkById(Integer id);
-	
+	public abstract Map<String,Object> selectLinkByVId(Integer vId);
+		
 }

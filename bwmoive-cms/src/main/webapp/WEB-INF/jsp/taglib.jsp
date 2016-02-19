@@ -15,8 +15,9 @@ basePath = "<%=basePath%>";
 <link rel="stylesheet" type="text/css" href="${ctx}/css/default.css" />
 <link rel="stylesheet" type="text/css" href="${ctx}/easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="${ctx}/easyui/themes/default/easyui.css" />
-<script type="text/javascript" src="${ctx}/js/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="${ctx}/easyui/jquery.easyui.min.1.2.2.js"></script>
+<script type="text/javascript" src="${ctx}/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/common.js"></script>
+<script type="text/javascript" src="${ctx}/easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${ctx}/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="${ctx}/ueditor/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="${ctx}/ueditor/lang/zh-cn/zh-cn.js"></script>

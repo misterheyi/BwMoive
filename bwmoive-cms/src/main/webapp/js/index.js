@@ -12,7 +12,7 @@ var _menus = {
 			"menuid" : "13",
 			"menuname" : "数据管理",
 			"icon" : "icon-users",
-			"url" : basePath + "riddle/toListRiddle"
+			"url" : basePath + "/data/toDataManagerUI"
 		}, ]
 	} ]
 };

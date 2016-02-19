@@ -4,6 +4,7 @@
 
 	<resultMap type="Area" id="areaResult">
 		<id property="aId" column="a_id"/>
+		<result property="cId" column="cid"/>
 		<result property="aName" column="a_name"/>
 		<result property="aEnName" column="a_enname"/>
 		<result property="aOrder" column="a_order"/>
@@ -13,4 +14,7 @@
 		select a.* from bw_area a order by a.a_order desc; 
 	</select>
 
+	<select id="selectAreaByChannelId" resultMap="areaResult">
+		select a.* from bw_area a where a.cid=#{cId} order by a.a_order desc; 
+	</select>
 </mapper>

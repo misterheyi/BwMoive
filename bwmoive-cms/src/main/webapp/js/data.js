@@ -1,6 +1,32 @@
 $(function() {
     var description = UE.getEditor('container', {
-   	 initialFrameHeight : 310
+   	 initialFrameHeight : 310,
+   	enableAutoSave:false
+    });
+    
+    //初始化频道
+    $('#cId').combobox({
+        url: basePath + '/channel/selectChannel',
+        valueField:'cId',
+        textField:'cName',
+        required:true,
+        editable:true,//不可编辑，只能选择
+        onSelect: function(channel){
+            $('#tId').combobox({
+                url: basePath + '/type/selectType?cId='+channel.cId,
+                required:true,
+                editable:true,//不可编辑，只能选择
+                valueField:'tId',
+                textField:'tName'
+            }).combobox('clear');
+            $('#aId').combobox({
+                url: basePath + '/area/selectArea?cId='+channel.cId,
+                required:true,
+                editable:true,//不可编辑，只能选择
+                valueField:'aId',
+                textField:'aName'
+            }).combobox('clear');
+        }
     });
     
     $('#vCycle').combobox({
@@ -41,7 +67,7 @@ $(function() {
     		dataType : "text",
     		type : "POST",
     		success : function(data, textStatus) {
-    			$("#vPic").val(data);
+    			$("#vPic").textbox('setValue', data);
     		},
     		error : function(XMLHttpRequest, textStatus, errorThrown) {
     			alert("失败");
@@ -58,6 +84,7 @@ $(function() {
 			url : basePath + '/data/saveBasicInfo',
 			data : {
 				"vPic" : $("#vPic").val(),
+				"cId" : $('#cId').combobox('getValue').toString(),
 				"tId" : $('#tId').combobox('getValue').toString(),
 				"aId" : $('#aId').combobox('getValue').toString(),
 				"vYear" : $("#vYear").val(),
@@ -111,7 +138,7 @@ $(function() {
 			beforeSend : function(){
 			},
 			success : function(data, textStatus) {
-				
+				window.location.reload();
 			},
 		    complete: function () {
 		    },
@@ -136,33 +163,34 @@ $(function() {
 			},
 			success : function(data, textStatus) {
 				var baseInfos = data.baseInfos;
-				$("#vName").val(baseInfos.vName);
-				$("#vSpell").val(baseInfos.vSpell);
-				$("#vLetter").val(baseInfos.vLetter);
-				$("#vNickName").val(baseInfos.vNickName);
-				$("#vEnName").val(baseInfos.vEnName);
-				$("#vPublishYear").val(baseInfos.vPublishYear);
-				$("#vPublishCompany").val(baseInfos.vPublishCompany);
-				$("#vShowBox").val(baseInfos.vShowBox);
-				$("#vPublishArea").val(baseInfos.vPublishArea);
-				$("#vVideoArea").val(baseInfos.vVideoArea);
-				$("#vOnTime").val(baseInfos.vOnTime);
-				$("#vOffTime").val(baseInfos.vOffTime);
-				$("#vDirector").val(baseInfos.vDirector);
-				$("#vWriter").val(baseInfos.vWriter);
-				$("#vProducer").val(baseInfos.vProducer);
-				$("#vType").val(baseInfos.vType);
-				$("#vActor").val(baseInfos.vActor);
-				$("#vTotal").val(baseInfos.vTotal);
-				$("#vLength").val(baseInfos.vLength);
-				$("#vBoxOffice").val(baseInfos.vBoxOffice);
-				$("#vLanguage").val(baseInfos.vLanguage);
-				$("#vColor").val(baseInfos.vColor);
-				$("#vImdb").val(baseInfos.vImdb);
-				$("#vPerLength").val(baseInfos.vPerLength);
-				$("#vPresenter").val(baseInfos.vPresenter);
-				$("#vOnlineShow").val(baseInfos.vOnlineShow);
-				$("#vTvShow").val(baseInfos.vTvShow);
+				$("#vName").textbox('setValue', baseInfos.vName);
+				$("#vSpell").textbox('setValue',baseInfos.vSpell);
+				$("#vLetter").textbox('setValue',baseInfos.vLetter);
+				$("#vNickName").textbox('setValue',baseInfos.vNickName);
+				$("#vEnName").textbox('setValue',baseInfos.vEnName);
+				$("#vNickName").textbox('setValue',baseInfos.vNickName);
+				$("#vPublishYear").textbox('setValue',baseInfos.vPublishYear);
+				$("#vPublishCompany").textbox('setValue',baseInfos.vPublishCompany);
+				$("#vShowBox").textbox('setValue',baseInfos.vShowBox);
+				$("#vPublishArea").textbox('setValue',baseInfos.vPublishArea);
+				$("#vVideoArea").textbox('setValue',baseInfos.vVideoArea);
+				$("#vOnTime").textbox('setValue',baseInfos.vOnTime);
+				$("#vOffTime").textbox('setValue',baseInfos.vOffTime);
+				$("#vDirector").textbox('setValue',baseInfos.vDirector);
+				$("#vWriter").textbox('setValue',baseInfos.vWriter);
+				$("#vProducer").textbox('setValue',baseInfos.vProducer);
+				$("#vType").textbox('setValue',baseInfos.vType);
+				$("#vActor").textbox('setValue',baseInfos.vActor);
+				$("#vTotal").textbox('setValue',baseInfos.vTotal);
+				$("#vLength").textbox('setValue',baseInfos.vLength);
+				$("#vBoxOffice").textbox('setValue',baseInfos.vBoxOffice);
+				$("#vLanguage").textbox('setValue',baseInfos.vLanguage);
+				$("#vColor").textbox('setValue',baseInfos.vColor);
+				$("#vImdb").textbox('setValue',baseInfos.vImdb);
+				$("#vPerLength").textbox('setValue',baseInfos.vPerLength);
+				$("#vPresenter").textbox('setValue',baseInfos.vPresenter);
+				$("#vOnlineShow").textbox('setValue',baseInfos.vOnlineShow);
+				$("#vTvShow").textbox('setValue',baseInfos.vTvShow);
 				
 				$("#vDrama").val(data.vDrama);
 			},

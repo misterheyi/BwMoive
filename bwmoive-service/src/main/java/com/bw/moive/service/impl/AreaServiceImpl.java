@@ -26,6 +26,17 @@ public class AreaServiceImpl implements IAreaService{
 		}
 		return new ArrayList<Area>(); 
 	}
+
+	@Override
+	public List<Area> selectAreaByChannelId(Integer cId) {
+		try {
+			return this.areaMapper.selectAreaByChannelId(cId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	
 	
 }

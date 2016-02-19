@@ -34,8 +34,7 @@ public class BasicInfos {
 		map.put("在线播放平台", "vOnlineShow");
 		map.put("播出平台", "vTvShow");
 		map.put("下映时间", "vOffTime");
-		map.put("监制", "监制");
-		map.put("执行制片人", "执行制片人");
+		map.put("其它译名", "vNickName");
 	}
 	
 	public static String getValue(String value){
@@ -43,7 +42,7 @@ public class BasicInfos {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(BasicInfos.getValue("出品人"));
+		System.out.println(BasicInfos.getValue("其他译名"));
 	}
 	
 }

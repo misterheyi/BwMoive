@@ -53,6 +53,17 @@
         <!-- Mybatis 其他配置 -->
         <property name="typeAliasesPackage" value="com.bw.moive.dao.entity,com.bw.moive.dao.dto">
         </property>
+        <property name="plugins">
+			    <array>
+			      <bean class="com.github.pagehelper.PageHelper">
+			        <property name="properties">
+			          <value>
+			            dialect=mysql
+			          </value>
+			        </property>
+			      </bean>
+			    </array>
+ 		</property>
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
 	</bean>
 

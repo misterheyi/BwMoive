@@ -2,6 +2,7 @@ package com.bw.moive.service;
 
 import java.util.Map;
 
+import com.bw.moive.dao.dto.DataSearchDTO;
 import com.bw.moive.dao.entity.Data;
 
 public interface IDataService {
@@ -14,5 +15,7 @@ public interface IDataService {
 	
 	//插入数据
 	public Map<String,Object> insertData(Data data);
+	
+	public Map<String,Object> selectData(DataSearchDTO param);
 	
 }

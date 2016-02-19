@@ -17,6 +17,6 @@ public class IndexController {
 	
 	@RequestMapping("/index")
 	public String index(ModelMap modelMap,HttpServletRequest request){
-		return "user";
+		return "index";
 	}
 }
